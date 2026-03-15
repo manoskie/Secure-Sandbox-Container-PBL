@@ -15,6 +15,6 @@ export const authenticateToken = (req: Request, res: Response, next: NextFunctio
         req.user = decode;
         next();
     } catch (error) {
-        res.send(403).json({ message: "token is not valid" });
+        res.status(403).json({ message: "token is not valid" });
     }
 }
